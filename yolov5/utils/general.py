@@ -96,7 +96,7 @@ def set_logging(name=None, verbose=VERBOSE):
 
 
 set_logging()  # run before defining LOGGER
-LOGGER = logging.getLogger("yolov5")  # define globally (used in train.py, val.py, detect.py, etc.)
+LOGGER = logging.getLogger("yolov5")  # define globally (used in train.py, val.py, infer.py, etc.)
 
 
 def user_config_dir(dir='Ultralytics', env_var='YOLOV5_CONFIG_DIR'):

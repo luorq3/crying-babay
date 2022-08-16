@@ -24,7 +24,7 @@ Usage:
     $ python path/to/export.py --weights yolov5s.pt --include torchscript onnx openvino engine coreml tflite ...
 
 Inference:
-    $ python path/to/detect.py --weights yolov5s.pt                 # PyTorch
+    $ python path/to/infer.py --weights yolov5s.pt                 # PyTorch
                                          yolov5s.torchscript        # TorchScript
                                          yolov5s.onnx               # ONNX Runtime or OpenCV DNN with --dnn
                                          yolov5s.xml                # OpenVINO
@@ -568,7 +568,7 @@ def run(
         h = '--half' if half else ''  # --half FP16 inference arg
         LOGGER.info(f'\nExport complete ({time.time() - t:.2f}s)'
                     f"\nResults saved to {colorstr('bold', file.parent.resolve())}"
-                    f"\nDetect:          python detect.py --weights {f[-1]} {h}"
+                    f"\nDetect:          python infer.py --weights {f[-1]} {h}"
                     f"\nValidate:        python val.py --weights {f[-1]} {h}"
                     f"\nPyTorch Hub:     model = torch.hub.load('ultralytics/yolov5', 'custom', '{f[-1]}')"
                     f"\nVisualize:       https://netron.app")

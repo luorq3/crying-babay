@@ -183,7 +183,7 @@ class _RepeatSampler:
 
 
 class LoadImages:
-    # YOLOv5 image/video dataloader, i.e. `python detect.py --source image.jpg/vid.mp4`
+    # YOLOv5 image/video dataloader, i.e. `python infer.py --source image.jpg/vid.mp4`
     def __init__(self, path, img_size=640, stride=32, auto=True):
         files = []
         for p in sorted(path) if isinstance(path, (list, tuple)) else [path]:
@@ -266,7 +266,7 @@ class LoadImages:
 
 
 class LoadWebcam:  # for inference
-    # YOLOv5 local webcam dataloader, i.e. `python detect.py --source 0`
+    # YOLOv5 local webcam dataloader, i.e. `python infer.py --source 0`
     def __init__(self, pipe='0', img_size=640, stride=32):
         self.img_size = img_size
         self.stride = stride
@@ -308,7 +308,7 @@ class LoadWebcam:  # for inference
 
 
 class LoadStreams:
-    # YOLOv5 streamloader, i.e. `python detect.py --source 'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP streams`
+    # YOLOv5 streamloader, i.e. `python infer.py --source 'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP streams`
     def __init__(self, sources='streams.txt', img_size=640, stride=32, auto=True):
         self.mode = 'stream'
         self.img_size = img_size

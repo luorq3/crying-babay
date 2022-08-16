@@ -1,5 +1,5 @@
 import numpy as np
-from detect import ModelComb
+from infer import ModelComb
 
 device = 'cpu'
 detect_model_path = 'yolov5/models/best.pt'
