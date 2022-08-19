@@ -56,9 +56,9 @@ if __name__ == '__main__':
     os.makedirs(run_path, exist_ok=True)
     face_detect = FaceDetect(detect_model_path, data_path, run_path, device)
 
-    img_dir = 'datasets/baby-face-2'
+    img_dir = 'datasets/baby-face-2/test'
     img_names = os.listdir(img_dir)
-    test_imgs = np.random.choice(img_names, 200)
+    test_imgs = np.random.choice(img_names, 70)
     print(f"Chosen {len(test_imgs)} test images.")
     for img_name in test_imgs:
         if img_name.split('.')[-1] not in ['png', 'jpg']:
